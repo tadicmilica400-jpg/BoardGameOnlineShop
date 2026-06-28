@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardGame Online Shop | Početna</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Naš CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="images/logo.png" alt="BoardGame Online Shop logo" class="logo">
+                    <span class="brand-text">BoardGame Online Shop</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Početna</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="galerija.html">Galerija</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="katalog.html" role="button" data-bs-toggle="dropdown">
+                                Katalog igara
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="katalog.html">Sve igre</a></li>
+                                <li><a class="dropdown-item" href="katalog.html?kategorija=porodicne">Porodične igre</a></li>
+                                <li><a class="dropdown-item" href="katalog.html?kategorija=strateske">Strateške igre</a></li>
+                                <li><a class="dropdown-item" href="katalog.html?kategorija=zabavne">Zabavne igre</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="nalog.html">Moj nalog</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="onama.html">O nama</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link lang-link" href="en/index.html">EN</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SEKCIJA -->
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 hero-text">
+                        <p class="small-title">Prodavnica društvenih igara</p>
+                        <h1>Pronađi savršenu igru za svako društvo</h1>
+                        <p>
+                            Istraži porodične, strateške i zabavne igre, pogledaj ocene,
+                            dodaj omiljene igre u korpu i spremi se za sledeće veče igranja.
+                        </p>
+
+                        <div class="hero-buttons">
+                            <a href="katalog.html" class="btn btn-primary-custom">Pogledaj katalog</a>
+                            <a href="galerija.html" class="btn btn-outline-custom">Galerija</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 text-center">
+                        <img src="images/logo.png" alt="Devojke bacaju kockice" class="hero-logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AKCIJE I POPUSTI -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Akcije i popusti</h2>
+                    <p>Posebne ponude za ljubitelje društvenih igara.</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <span class="badge-custom">-20%</span>
+                            <h3>Porodični vikend</h3>
+                            <p>Popust na izabrane porodične igre tokom vikenda.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <span class="badge-custom">Novo</span>
+                            <h3>Turnir u strategijama</h3>
+                            <p>Prijavi se za mini turnir i osvoji poklon vaučer.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <span class="badge-custom">Hit</span>
+                            <h3>Poklon paketi</h3>
+                            <p>Spremni paketi igara za rođendane i praznike.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOVE IGRE -->
+        <section class="content-section light-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nove igre u ponudi</h2>
+                    <p>Pogledaj najnovije naslove u našoj prodavnici.</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="game-card">
+                            <div class="game-image-placeholder">Slika igre</div>
+                            <div class="game-card-body">
+                                <h3>Catan</h3>
+                                <p>Strateška igra trgovine, gradnje i osvajanja teritorije.</p>
+                                <p class="price">4.500 RSD</p>
+                                <a href="igra.html?id=catan" class="btn btn-small-custom">Detalji</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="game-card">
+                            <div class="game-image-placeholder">Slika igre</div>
+                            <div class="game-card-body">
+                                <h3>Dixit</h3>
+                                <p>Kreativna igra asocijacija, mašte i prelepih ilustracija.</p>
+                                <p class="price">3.900 RSD</p>
+                                <a href="igra.html?id=dixit" class="btn btn-small-custom">Detalji</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="game-card">
+                            <div class="game-image-placeholder">Slika igre</div>
+                            <div class="game-card-body">
+                                <h3>Uno</h3>
+                                <p>Brza i zabavna kartaška igra za celu ekipu.</p>
+                                <p class="price">1.200 RSD</p>
+                                <a href="igra.html?id=uno" class="btn btn-small-custom">Detalji</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOP 3 IGRE -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Tri najbolje ocenjene igre</h2>
+                    <p>Omiljene igre naših posetilaca.</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="top-card">
+                            <span class="rank">1</span>
+                            <h3>Ticket to Ride</h3>
+                            <p class="rating">★★★★★</p>
+                            <p>Odlična porodična igra sa jednostavnim pravilima.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="top-card">
+                            <span class="rank">2</span>
+                            <h3>Azul</h3>
+                            <p class="rating">★★★★★</p>
+                            <p>Prelepa apstraktna igra slaganja pločica.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="top-card">
+                            <span class="rank">3</span>
+                            <h3>Exploding Kittens</h3>
+                            <p class="rating">★★★★☆</p>
+                            <p>Brza i smešna igra za opušteno društvo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BANERI / LINKOVI -->
+        <section class="banner-section">
+            <div class="container">
+                <div class="banner-box">
+                    <h2>Partneri i korisni linkovi</h2>
+                    <p>Uskoro: linkovi ka turnirima, izdavačima i zajednicama društvenih igara.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>
+                Copyright 2026, Milica Tadić & Ivana Mušikić, Odsek za softversko inženjerstvo
+                Elektrotehničkog fakulteta Univerziteta u Beogradu
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
