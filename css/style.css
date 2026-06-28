@@ -364,3 +364,126 @@ a {
         font-size: 28px;
     }
 }
+/* PAGE HERO */
+
+.page-hero {
+    padding: 55px 0;
+    background: linear-gradient(135deg, #fff7fb, #f3e4ff);
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #6d348e;
+    margin-bottom: 12px;
+}
+
+.page-hero p {
+    color: #6a5b72;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.breadcrumbs {
+    font-size: 15px;
+    color: #8b6b99;
+}
+
+.breadcrumbs a {
+    color: #e754a6;
+    font-weight: 700;
+}
+
+.breadcrumbs span {
+    margin: 0 5px;
+}
+
+/* KATALOG */
+
+.catalog-controls {
+    background-color: white;
+    border: 1px solid #f2d3ee;
+    border-radius: 24px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(123, 63, 163, 0.10);
+}
+
+.catalog-controls .form-label {
+    color: #6d348e;
+    font-weight: 700;
+}
+
+.catalog-controls .form-control,
+.catalog-controls .form-select {
+    border-radius: 16px;
+    border: 1px solid #e5c3ec;
+    padding: 11px 14px;
+}
+
+.catalog-controls .form-control:focus,
+.catalog-controls .form-select:focus {
+    border-color: #e754a6;
+    box-shadow: 0 0 0 0.2rem rgba(231, 84, 166, 0.15);
+}
+
+.catalog-count {
+    color: #7c6a86;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.category-pill {
+    display: inline-block;
+    background-color: #f4d9ff;
+    color: #7b3fa3;
+    padding: 6px 12px;
+    border-radius: 18px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.game-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    color: #6a5b72;
+    font-size: 15px;
+}
+
+.game-info-list li {
+    margin-bottom: 5px;
+}
+
+.game-card-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-cart-small {
+    background-color: #f7c6e4;
+    color: #9c2d78;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-weight: 700;
+    border: none;
+}
+
+.btn-cart-small:hover {
+    background-color: #e754a6;
+    color: white;
+}
+
+.no-results {
+    background-color: white;
+    color: #9c2d78;
+    border: 1px solid #f2d3ee;
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(123, 63, 163, 0.10);
+}
