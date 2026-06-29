@@ -1,6 +1,7 @@
 /* ============================================================
-   cart.js — cart logic + rendering of the "Moj nalog" page
+   cart.js — cart logic + rendering of the account page
    Persisted via localStorage (survives closing the browser).
+   Bilingual: UI text is chosen from <html lang> (sr / en).
    ------------------------------------------------------------
    Cart item:  { id, naziv, cena, kolicina }
    Order:      { id, datum, stavke:[...], ukupno }
@@ -8,6 +9,27 @@
 
 const CART_KEY = "bg_korpa";
 const HISTORY_KEY = "bg_istorija";
+
+/* ---------- i18n (UI labels per language) ---------- */
+const I18N = {
+  sr: {
+    emptyCart: 'Vaša korpa je prazna. Pogledajte <a href="katalog.html">katalog igara</a> i dodajte nešto za sledeće veče igranja.',
+    colGame: "Igra", colPrice: "Cena", colQty: "Količina", colSum: "Ukupno",
+    remove: "Ukloni", total: "Ukupno:", checkout: "Finalizuj kupovinu",
+    noHistory: "Još uvek nema završenih porudžbina.", locale: "sr-RS"
+  },
+  en: {
+    emptyCart: 'Your cart is empty. Browse the <a href="catalog.html">game catalog</a> and add something for your next game night.',
+    colGame: "Game", colPrice: "Price", colQty: "Quantity", colSum: "Total",
+    remove: "Remove", total: "Total:", checkout: "Checkout",
+    noHistory: "No completed orders yet.", locale: "en-GB"
+  }
+};
+
+// pick the dictionary for the current page language
+function L() {
+  return I18N[document.documentElement.lang === "en" ? "en" : "sr"];
+}
 
 /* ---------- read / write storage ---------- */
 function getCart() {
@@ -74,7 +96,7 @@ function finalizeOrder() {
 
   const porudzbina = {
     id: Date.now(),
-    datum: new Date().toLocaleString("sr-RS"),
+    datum: new Date().toLocaleString(L().locale),
     stavke: cart,
     ukupno: cartTotal()
   };
@@ -88,7 +110,7 @@ function finalizeOrder() {
 
 /* ---------- price format ---------- */
 function formatRSD(iznos) {
-  return iznos.toLocaleString("sr-RS") + " RSD";
+  return iznos.toLocaleString(L().locale) + " RSD";
 }
 
 // expose globally (used by catalog/game pages)
@@ -98,7 +120,7 @@ window.formatRSD = formatRSD;
 
 
 /* ============================================================
-   RENDERING THE "MOJ NALOG" PAGE
+   RENDERING THE ACCOUNT PAGE
    Runs only if #cart-container exists on the page.
    ============================================================ */
 document.addEventListener("DOMContentLoaded", function () {
@@ -108,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
   renderCart();
   renderHistory();
 
-  // "Finalizuj kupovinu" button
+  // checkout button
   document.addEventListener("click", function (e) {
     if (e.target.id === "checkout-btn") {
       const p = finalizeOrder();
@@ -124,11 +146,10 @@ function renderCart() {
   const container = document.getElementById("cart-container");
   const summary = document.getElementById("cart-summary");
   const cart = getCart();
+  const t = L();
 
   if (cart.length === 0) {
-    container.innerHTML =
-      '<div class="empty-note">Vaša korpa je prazna. ' +
-      'Pogledajte <a href="katalog.html">katalog igara</a> i dodajte nešto za sledeće veče igranja.</div>';
+    container.innerHTML = '<div class="empty-note">' + t.emptyCart + '</div>';
     if (summary) summary.innerHTML = "";
     return;
   }
@@ -147,7 +168,7 @@ function renderCart() {
           '</span>' +
         '</td>' +
         '<td class="sum">' + formatRSD(s.cena * s.kolicina) + '</td>' +
-        '<td><button class="remove-btn" onclick="qtyRemove(\'' + s.id + '\')">Ukloni</button></td>' +
+        '<td><button class="remove-btn" onclick="qtyRemove(\'' + s.id + '\')">' + t.remove + '</button></td>' +
       '</tr>';
   });
 
@@ -155,7 +176,8 @@ function renderCart() {
     '<div class="table-responsive">' +
       '<table class="cart-table">' +
         '<thead><tr>' +
-          '<th>Igra</th><th>Cena</th><th>Količina</th><th>Ukupno</th><th></th>' +
+          '<th>' + t.colGame + '</th><th>' + t.colPrice + '</th>' +
+          '<th>' + t.colQty + '</th><th>' + t.colSum + '</th><th></th>' +
         '</tr></thead>' +
         '<tbody>' + redovi + '</tbody>' +
       '</table>' +
@@ -164,8 +186,8 @@ function renderCart() {
   if (summary) {
     summary.innerHTML =
       '<div class="cart-summary">' +
-        '<div class="total-row"><span>Ukupno:</span><span>' + formatRSD(cartTotal()) + '</span></div>' +
-        '<button id="checkout-btn" class="btn btn-primary-custom w-100">Finalizuj kupovinu</button>' +
+        '<div class="total-row"><span>' + t.total + '</span><span>' + formatRSD(cartTotal()) + '</span></div>' +
+        '<button id="checkout-btn" class="btn btn-primary-custom w-100">' + t.checkout + '</button>' +
       '</div>';
   }
 }
@@ -187,10 +209,11 @@ window.qtyRemove = qtyRemove;
 function renderHistory() {
   const box = document.getElementById("history-container");
   if (!box) return;
+  const t = L();
 
   const hist = getHistory();
   if (hist.length === 0) {
-    box.innerHTML = '<p class="empty-note">Još uvek nema završenih porudžbina.</p>';
+    box.innerHTML = '<p class="empty-note">' + t.noHistory + '</p>';
     return;
   }
 
