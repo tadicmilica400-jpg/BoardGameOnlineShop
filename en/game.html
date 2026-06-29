@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardGame Online Shop | Game Details</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/ivana.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="../images/logo.png" alt="BoardGame Online Shop logo" class="logo">
+                    <span class="brand-text">BoardGame Online Shop</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="catalog.html" role="button" data-bs-toggle="dropdown">
+                                Game Catalog
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="catalog.html">All Games</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?kategorija=porodicne">Family Games</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?kategorija=strateske">Strategy Games</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?kategorija=zabavne">Party Games</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="account.html">My Account</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link lang-link" id="sr-link" href="../igra.html">SR</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumb-bar">
+        <div class="container">
+            <ul class="breadcrumb-custom">
+                <li><a href="index.html">Home</a></li>
+                <li class="sep">›</li>
+                <li><a href="catalog.html">Game Catalog</a></li>
+                <li class="sep">›</li>
+                <li class="active" id="breadcrumb-game-name">Game details</li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <!-- Page title -->
+        <section class="page-header">
+            <div class="container">
+                <h1 id="game-title">Game Details</h1>
+                <p id="game-subtitle">View information about the selected board game.</p>
+            </div>
+        </section>
+
+        <!-- Game details -->
+        <section class="content-section">
+            <div class="container">
+
+                <div id="game-not-found" class="no-results d-none">
+                    Game not found. Please return to the catalog and choose an available game.
+                    <br>
+                    <a href="catalog.html" class="btn btn-primary-custom mt-3">Back to catalog</a>
+                </div>
+
+                <div id="game-details" class="row g-4 align-items-start">
+                    <div class="col-lg-5">
+                        <div class="game-detail-image-box">
+                            <div id="game-image" class="game-detail-image-placeholder">
+                                Game image
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="game-detail-card">
+                            <span id="game-category" class="category-pill">Category</span>
+
+                            <h2 id="game-name">Game name</h2>
+
+                            <p id="game-description" class="game-detail-description">
+                                Game description.
+                            </p>
+
+                            <div class="game-detail-grid">
+                                <div class="game-detail-info">
+                                    <span>Players</span>
+                                    <strong id="game-players">-</strong>
+                                </div>
+
+                                <div class="game-detail-info">
+                                    <span>Age</span>
+                                    <strong id="game-age">-</strong>
+                                </div>
+
+                                <div class="game-detail-info">
+                                    <span>Duration</span>
+                                    <strong id="game-duration">-</strong>
+                                </div>
+
+                                <div class="game-detail-info">
+                                    <span>Average rating</span>
+                                    <strong id="game-rating">-</strong>
+                                </div>
+                            </div>
+
+                            <p id="game-price" class="price game-detail-price">0 RSD</p>
+
+                            <div class="game-detail-actions">
+                                <button id="add-to-cart-btn" class="btn btn-primary-custom">
+                                    Add to cart
+                                </button>
+
+                                <a href="catalog.html" class="btn btn-outline-custom">
+                                    Back to catalog
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Rating section -->
+        <section class="content-section light-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Rate this game</h2>
+                    <p>Choose a rating from 1 to 5. Your rating is saved in the browser.</p>
+                </div>
+
+                <div class="rating-box">
+                    <p id="average-rating-message" class="rating-message">
+                        Average rating: -
+                    </p>
+
+                    <div class="rating-buttons" id="rating-buttons">
+                        <button class="rating-btn" data-rating="1">1</button>
+                        <button class="rating-btn" data-rating="2">2</button>
+                        <button class="rating-btn" data-rating="3">3</button>
+                        <button class="rating-btn" data-rating="4">4</button>
+                        <button class="rating-btn" data-rating="5">5</button>
+                    </div>
+
+                    <p id="rating-message" class="rating-message">
+                        Choose a rating from 1 to 5.
+                    </p>
+
+                    <button id="submit-rating-btn" class="btn btn-primary-custom mt-3">
+                        Submit rating
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comments section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Comments</h2>
+                    <p>Leave a comment and read other users' opinions.</p>
+                </div>
+
+                <div class="comments-layout">
+                    <div class="comment-form-box">
+                        <h3>Add comment</h3>
+
+                        <form id="comment-form">
+                            <div class="mb-3">
+                                <label for="comment-name" class="form-label">Name</label>
+                                <input type="text" id="comment-name" class="form-control" placeholder="Enter your name">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="comment-text" class="form-label">Comment</label>
+                                <textarea id="comment-text" class="form-control" rows="4" placeholder="Write a comment"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary-custom">
+                                Save comment
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="comments-list-box">
+                        <h3>Previous comments</h3>
+
+                        <div id="comments-container">
+                            <p class="empty-note">There are no comments for this game yet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related navigation -->
+        <section class="banner-section">
+            <div class="container">
+                <div class="banner-box">
+                    <h2>Want more suggestions?</h2>
+                    <p>Return to the catalog and discover more board games.</p>
+                    <a href="catalog.html" class="btn btn-primary-custom mt-2">View all games</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>
+                Copyright 2026, Milica Tadić &amp; Ivana Mušikić, Department of Software Engineering,
+                School of Electrical Engineering, University of Belgrade
+            </p>
+        </div>
+    </footer>
+
+    <!-- External libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Our scripts -->
+    <script src="../js/data.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/game.js"></script>
+</body>
+</html>

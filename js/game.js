@@ -1,12 +1,14 @@
 /* ============================================================
    game.js — game details page logic
    Uses GAMES from data.js and addToCart from cart.js
+   Supports Serbian and English pages
    ============================================================ */
 
 const params = new URLSearchParams(window.location.search);
 const gameId = params.get("id");
 
 const game = getGameById(gameId);
+const isEnglish = document.documentElement.lang === "en";
 
 const gameNotFound = document.getElementById("game-not-found");
 const gameDetails = document.getElementById("game-details");
@@ -40,6 +42,13 @@ const commentText = document.getElementById("comment-text");
 const commentsContainer = document.getElementById("comments-container");
 
 function getCategoryName(category) {
+    if (isEnglish) {
+        if (category === "porodicne") return "Family games";
+        if (category === "strateske") return "Strategy games";
+        if (category === "zabavne") return "Party games";
+        return "Board game";
+    }
+
     if (category === "porodicne") return "Porodične igre";
     if (category === "strateske") return "Strateške igre";
     if (category === "zabavne") return "Zabavne igre";
@@ -70,18 +79,28 @@ function renderGameDetails() {
 
     gameCategory.textContent = getCategoryName(game.kategorija);
     gameName.textContent = game.naziv;
-    gameDescription.textContent = game.opis;
+    gameDescription.textContent = isEnglish ? game.opisEn : game.opis;
     gamePlayers.textContent = game.brojIgraca;
     gameAge.textContent = game.uzrast;
     gameDuration.textContent = game.trajanje;
-    gameRating.textContent = game.ocena;
     gamePrice.textContent = formatRSD(game.cena);
 
     document.title = "BoardGame Online Shop | " + game.naziv;
 
+    const srLink = document.getElementById("sr-link");
+    const enLink = document.getElementById("en-link");
+
+    if (srLink) {
+        srLink.href = "../igra.html?id=" + game.id;
+    }
+
+    if (enLink) {
+        enLink.href = "en/game.html?id=" + game.id;
+    }
+
     if (game.slike && game.slike.length > 0) {
         gameImage.innerHTML = `
-            <img src="${game.slike[0]}" alt="${game.naziv}">
+            <img src="${isEnglish ? "../" : ""}${game.slike[0]}" alt="${game.naziv}">
         `;
     } else {
         gameImage.textContent = game.naziv;
@@ -99,7 +118,7 @@ function saveRatings(ratings) {
 function calculateAverageRating() {
     const ratings = getRatings();
 
-    let sum = game.ocena;
+    let sum = Number(game.ocena);
     let count = 1;
 
     ratings.forEach(function(rating) {
@@ -114,7 +133,10 @@ function renderAverageRating() {
     const average = calculateAverageRating();
 
     gameRating.textContent = average;
-    averageRatingMessage.textContent = "Prosečna ocena: " + average + "/5";
+
+    averageRatingMessage.textContent = isEnglish
+        ? "Average rating: " + average + "/5"
+        : "Prosečna ocena: " + average + "/5";
 }
 
 function renderSavedRating() {
@@ -126,7 +148,10 @@ function renderSavedRating() {
 
     if (savedRating) {
         selectedRating = savedRating;
-        ratingMessage.textContent = "Vaša ocena za ovu igru je " + savedRating + "/5.";
+
+        ratingMessage.textContent = isEnglish
+            ? "Your rating for this game is " + savedRating + "/5."
+            : "Vaša ocena za ovu igru je " + savedRating + "/5.";
 
         ratingButtons.forEach(function(button) {
             if (button.dataset.rating === savedRating) {
@@ -134,7 +159,9 @@ function renderSavedRating() {
             }
         });
     } else {
-        ratingMessage.textContent = "Izaberite ocenu od 1 do 5.";
+        ratingMessage.textContent = isEnglish
+            ? "Choose a rating from 1 to 5."
+            : "Izaberite ocenu od 1 do 5.";
     }
 
     renderAverageRating();
@@ -142,7 +169,10 @@ function renderSavedRating() {
 
 function submitRating() {
     if (!selectedRating) {
-        alert("Prvo izaberite ocenu od 1 do 5.");
+        alert(isEnglish
+            ? "Please choose a rating from 1 to 5 first."
+            : "Prvo izaberite ocenu od 1 do 5."
+        );
         return;
     }
 
@@ -154,6 +184,8 @@ function submitRating() {
 
         if (index !== -1) {
             ratings[index] = Number(selectedRating);
+        } else {
+            ratings.push(Number(selectedRating));
         }
     } else {
         ratings.push(Number(selectedRating));
@@ -163,7 +195,11 @@ function submitRating() {
     localStorage.setItem(getRatingKey(), selectedRating);
 
     renderSavedRating();
-    alert("Ocena je sačuvana.");
+
+    alert(isEnglish
+        ? "Rating has been saved."
+        : "Ocena je sačuvana."
+    );
 }
 
 function getComments() {
@@ -178,7 +214,9 @@ function renderComments() {
     const comments = getComments();
 
     if (comments.length === 0) {
-        commentsContainer.innerHTML = '<p class="empty-note">Još uvek nema komentara za ovu igru.</p>';
+        commentsContainer.innerHTML = isEnglish
+            ? '<p class="empty-note">There are no comments for this game yet.</p>'
+            : '<p class="empty-note">Još uvek nema komentara za ovu igru.</p>';
         return;
     }
 
@@ -206,7 +244,10 @@ function addComment(event) {
     const text = commentText.value.trim();
 
     if (name === "" || text === "") {
-        alert("Unesite ime i komentar.");
+        alert(isEnglish
+            ? "Please enter your name and comment."
+            : "Unesite ime i komentar."
+        );
         return;
     }
 
@@ -228,7 +269,11 @@ function addComment(event) {
 function setupEvents() {
     addToCartBtn.addEventListener("click", function() {
         addToCart(game.id, 1);
-        alert("Igra je dodata u korpu.");
+
+        alert(isEnglish
+            ? "The game has been added to your cart."
+            : "Igra je dodata u korpu."
+        );
     });
 
     ratingButtons.forEach(function(button) {
@@ -240,7 +285,10 @@ function setupEvents() {
             });
 
             button.classList.add("active");
-            ratingMessage.textContent = "Izabrali ste ocenu " + selectedRating + "/5. Kliknite na Pošalji ocenu.";
+
+            ratingMessage.textContent = isEnglish
+                ? "You selected " + selectedRating + "/5. Click Submit rating."
+                : "Izabrali ste ocenu " + selectedRating + "/5. Kliknite na Pošalji ocenu.";
         });
     });
 
