@@ -1,0 +1,456 @@
+/* ============================================================
+   milica.css — page-specific styles for my pages
+   (O nama, Moj nalog; later: Galerija)
+
+   Shared base (header, footer, hero, cards, .page-hero,
+   .breadcrumbs, .section-title) lives in style.css.
+   Here go only styles unique to my pages.
+   Palette matches style.css (pink/purple).
+   ============================================================ */
+
+/* ============================================================
+   O NAMA
+   ============================================================ */
+
+/* contact / opening-hours lists */
+.contact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-list li {
+    padding: 8px 0;
+    color: #5b4a63;
+    border-bottom: 1px dashed #f0d3ea;
+}
+
+.contact-list li:last-child {
+    border-bottom: none;
+}
+
+.contact-list strong {
+    color: #7b3fa3;
+}
+
+/* awards list with star bullets */
+.award-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.award-list li {
+    position: relative;
+    padding: 10px 0 10px 28px;
+    color: #5b4a63;
+}
+
+.award-list li::before {
+    content: "\2605"; /* star */
+    position: absolute;
+    left: 0;
+    color: #f3a600;
+}
+
+/* map embed */
+.map-wrap {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid #f2d3ee;
+    box-shadow: 0 8px 20px rgba(123, 63, 163, 0.12);
+}
+
+.map-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 380px;
+    border: 0;
+}
+
+
+/* ============================================================
+   MOJ NALOG / KORPA
+   ============================================================ */
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(123, 63, 163, 0.12);
+}
+
+.cart-table th {
+    background-color: #f7e3f5;
+    color: #6d348e;
+    text-align: left;
+    padding: 16px;
+    font-weight: 700;
+}
+
+.cart-table td {
+    padding: 16px;
+    border-top: 1px solid #f2d3ee;
+    color: #5b4a63;
+    vertical-align: middle;
+}
+
+.cart-table .price,
+.cart-table .sum {
+    color: #e754a6;
+    font-weight: 800;
+}
+
+/* quantity +/- */
+.qty-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f4d9ff;
+    color: #7b3fa3;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.qty-btn:hover {
+    background-color: #e9c4ff;
+}
+
+.qty-num {
+    min-width: 28px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #c93f8c;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    text-decoration: underline;
+}
+
+/* cart total box */
+.cart-summary {
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 26px;
+    border: 1px solid #f2d3ee;
+    box-shadow: 0 8px 20px rgba(123, 63, 163, 0.12);
+}
+
+.cart-summary .total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 800;
+    color: #6d348e;
+    margin-bottom: 18px;
+}
+
+/* empty cart / no history */
+.empty-note {
+    text-align: center;
+    color: #7c6a86;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 24px;
+    border: 2px dashed #d49be8;
+}
+
+.empty-note a {
+    color: #e754a6;
+    font-weight: 700;
+}
+
+/* order history */
+.history-card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px 24px;
+    border: 1px solid #f2d3ee;
+    box-shadow: 0 6px 16px rgba(123, 63, 163, 0.10);
+    margin-bottom: 16px;
+}
+
+.history-card .h-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.history-card .h-date {
+    color: #7c6a86;
+    font-weight: 600;
+}
+
+.history-card .h-total {
+    color: #e754a6;
+    font-weight: 800;
+}
+
+.history-card ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #5b4a63;
+}
+
+
+/* ============================================================
+   GALERIJA
+   ============================================================ */
+
+/* tabs (Prodavnica / Igre / Video) */
+.gallery-tabs {
+    list-style: none;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.gallery-tab {
+    border: 2px solid #b780d6;
+    background-color: transparent;
+    color: #7b3fa3;
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.gallery-tab:hover {
+    background-color: #f4d9ff;
+}
+
+.gallery-tab.active {
+    background-color: #e754a6;
+    color: #fff;
+    border-color: #e754a6;
+}
+
+/* image tiles */
+.gallery-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 220px;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(123, 63, 163, 0.12);
+}
+
+.gallery-item img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2; /* iznad placeholder-a kad se učita */
+}
+
+/* fallback kad fajl slike ne postoji */
+.gallery-ph {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    background: linear-gradient(135deg, #f9c5e7, #d9b8ff);
+    color: #7b3fa3;
+    font-weight: 700;
+    font-size: 18px;
+    z-index: 1;
+}
+
+/* caption preko dna pločice */
+.gallery-cap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    padding: 10px 14px;
+    background: linear-gradient(transparent, rgba(109, 52, 142, 0.85));
+    color: #fff;
+    font-weight: 700;
+    text-align: left;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.gallery-item:hover .gallery-cap {
+    opacity: 1;
+}
+
+/* video kartice */
+.video-card {
+    position: relative;
+    height: 240px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #efd6ff, #f9c5e7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    box-shadow: 0 8px 20px rgba(123, 63, 163, 0.12);
+    border: 1px solid #f2d3ee;
+}
+
+.video-card .play-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #e754a6;
+    color: #fff;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 4px;
+}
+
+.video-card .video-title {
+    color: #6d348e;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    padding: 0 16px;
+}
+
+/* lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background-color: rgba(60, 30, 75, 0.85);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-figure {
+    max-width: 800px;
+    width: 100%;
+    margin: 0;
+}
+
+.lightbox-figure img,
+.lightbox-ph {
+    width: 100%;
+    max-height: 75vh;
+    border-radius: 16px;
+}
+
+.lightbox-ph {
+    min-height: 320px;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f9c5e7, #d9b8ff);
+    color: #7b3fa3;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.lightbox-figure figcaption {
+    margin-top: 14px;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 28px;
+    color: #fff;
+    font-size: 40px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   BANERI (partneri / korisni linkovi)
+   ============================================================ */
+
+.banner-link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 28px;
+    border: 1px solid #f2d3ee;
+    box-shadow: 0 8px 20px rgba(123, 63, 163, 0.12);
+    transition: 0.2s;
+}
+
+.banner-link:hover {
+    transform: translateY(-5px);
+}
+
+.banner-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #e754a6;
+    color: #fff;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.banner-link h3 {
+    color: #6d348e;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.banner-link p {
+    color: #6a5b72;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.banner-cta {
+    color: #e754a6;
+    font-weight: 800;
+    margin-top: 14px;
+}

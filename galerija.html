@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardGame Online Shop | Galerija</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/milica.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="images/logo.png" alt="BoardGame Online Shop logo" class="logo">
+                    <span class="brand-text">BoardGame Online Shop</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Početna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="galerija.html">Galerija</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="katalog.html" role="button" data-bs-toggle="dropdown">
+                                Katalog igara
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="katalog.html">Sve igre</a></li>
+                                <li><a class="dropdown-item" href="katalog.html?kategorija=porodicne">Porodične igre</a></li>
+                                <li><a class="dropdown-item" href="katalog.html?kategorija=strateske">Strateške igre</a></li>
+                                <li><a class="dropdown-item" href="katalog.html?kategorija=zabavne">Zabavne igre</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nalog.html">Moj nalog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="onama.html">O nama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link lang-link" href="en/gallery.html">EN</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- PAGE HERO (naslov + breadcrumbs, isto kao katalog) -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Galerija</h1>
+                <p>Fotografije prodavnice, naših igara i snimci sa turnira i radionica.</p>
+
+                <nav class="breadcrumbs">
+                    <a href="index.html">Početna</a>
+                    <span>›</span>
+                    <span>Galerija</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section class="content-section">
+            <div class="container">
+
+                <!-- Tabs: shop / games / video -->
+                <ul class="nav gallery-tabs justify-content-center mb-5" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="gallery-tab active" data-bs-toggle="tab" data-bs-target="#tab-prodavnica" type="button" role="tab">
+                            Prodavnica
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="gallery-tab" data-bs-toggle="tab" data-bs-target="#tab-igre" type="button" role="tab">
+                            Društvene igre
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="gallery-tab" data-bs-toggle="tab" data-bs-target="#tab-video" type="button" role="tab">
+                            Video
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+
+                    <!-- == SHOP PHOTOS == -->
+                    <!-- To add a real photo: keep the same <button>, the <img> shows it,
+                         the .gallery-ph behind it is just the fallback if the file is missing. -->
+                    <div class="tab-pane fade show active" id="tab-prodavnica" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button"
+                                        onclick="openLightbox(this)"
+                                        data-full="images/galerija/prodavnica-1.jpg"
+                                        data-caption="Enterijer prodavnice">
+                                    <img src="images/galerija/prodavnica-1.jpg" alt="Enterijer prodavnice" onerror="this.remove()">
+                                    <span class="gallery-ph">Enterijer prodavnice</span>
+                                    <span class="gallery-cap">Enterijer prodavnice</span>
+                                </button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button"
+                                        onclick="openLightbox(this)"
+                                        data-full="images/galerija/prodavnica-2.jpg"
+                                        data-caption="Polica sa igrama">
+                                    <img src="images/galerija/prodavnica-2.jpg" alt="Polica sa igrama" onerror="this.remove()">
+                                    <span class="gallery-ph">Polica sa igrama</span>
+                                    <span class="gallery-cap">Polica sa igrama</span>
+                                </button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button"
+                                        onclick="openLightbox(this)"
+                                        data-full="images/galerija/prodavnica-3.jpg"
+                                        data-caption="Kutak za igranje">
+                                    <img src="images/galerija/prodavnica-3.jpg" alt="Kutak za igranje" onerror="this.remove()">
+                                    <span class="gallery-ph">Kutak za igranje</span>
+                                    <span class="gallery-cap">Kutak za igranje</span>
+                                </button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button"
+                                        onclick="openLightbox(this)"
+                                        data-full="images/galerija/prodavnica-4.jpg"
+                                        data-caption="Izlog prodavnice">
+                                    <img src="images/galerija/prodavnica-4.jpg" alt="Izlog prodavnice" onerror="this.remove()">
+                                    <span class="gallery-ph">Izlog prodavnice</span>
+                                    <span class="gallery-cap">Izlog prodavnice</span>
+                                </button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button"
+                                        onclick="openLightbox(this)"
+                                        data-full="images/galerija/prodavnica-5.jpg"
+                                        data-caption="Pult i kasa">
+                                    <img src="images/galerija/prodavnica-5.jpg" alt="Pult i kasa" onerror="this.remove()">
+                                    <span class="gallery-ph">Pult i kasa</span>
+                                    <span class="gallery-cap">Pult i kasa</span>
+                                </button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button"
+                                        onclick="openLightbox(this)"
+                                        data-full="images/galerija/prodavnica-6.jpg"
+                                        data-caption="Sala za radionice">
+                                    <img src="images/galerija/prodavnica-6.jpg" alt="Sala za radionice" onerror="this.remove()">
+                                    <span class="gallery-ph">Sala za radionice</span>
+                                    <span class="gallery-cap">Sala za radionice</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- == BOARD GAME PHOTOS == -->
+                    <div class="tab-pane fade" id="tab-igre" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button"
+                                        onclick="openLightbox(this)"
+                                        data-full="images/galerija/igra-catan.jpg"
+                                        data-caption="Catan">
+                                    <img src="images/galerija/igra-catan.jpg" alt="Catan" onerror="this.remove()">
+                                    <span class="gallery-ph">Catan</span>
+                                    <span class="gallery-cap">Catan</span>
+                                </button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button"
+                                        onclick="openLightbox(this)"
+                                        data-full="images/galerija/igra-azul.jpg"
+                                        data-caption="Azul">
+                                    <img src="images/galerija/igra-azul.jpg" alt="Azul" onerror="this.remove()">
+                                    <span class="gallery-ph">Azul</span>
+                                    <span class="gallery-cap">Azul</span>
+                                </button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button"
+                                        onclick="openLightbox(this)"
+                                        data-full="images/galerija/igra-ticket.jpg"
+                                        data-caption="Ticket to Ride">
+                                    <img src="images/galerija/igra-ticket.jpg" alt="Ticket to Ride" onerror="this.remove()">
+                                    <span class="gallery-ph">Ticket to Ride</span>
+                                    <span class="gallery-cap">Ticket to Ride</span>
+                                </button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button"
+                                        onclick="openLightbox(this)"
+                                        data-full="images/galerija/igra-dixit.jpg"
+                                        data-caption="Dixit">
+                                    <img src="images/galerija/igra-dixit.jpg" alt="Dixit" onerror="this.remove()">
+                                    <span class="gallery-ph">Dixit</span>
+                                    <span class="gallery-cap">Dixit</span>
+                                </button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button"
+                                        onclick="openLightbox(this)"
+                                        data-full="images/galerija/igra-codenames.jpg"
+                                        data-caption="Codenames">
+                                    <img src="images/galerija/igra-codenames.jpg" alt="Codenames" onerror="this.remove()">
+                                    <span class="gallery-ph">Codenames</span>
+                                    <span class="gallery-cap">Codenames</span>
+                                </button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button"
+                                        onclick="openLightbox(this)"
+                                        data-full="images/galerija/igra-uno.jpg"
+                                        data-caption="Uno">
+                                    <img src="images/galerija/igra-uno.jpg" alt="Uno" onerror="this.remove()">
+                                    <span class="gallery-ph">Uno</span>
+                                    <span class="gallery-cap">Uno</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- == VIDEO == -->
+                    <!-- To add a real video: replace the .video-card button with a Bootstrap ratio + iframe, e.g.:
+                         <div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                              title="..." allowfullscreen></iframe></div> -->
+                    <div class="tab-pane fade" id="tab-video" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="video-card">
+                                    <span class="play-icon">▶</span>
+                                    <span class="video-title">Finale prolećnog turnira</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="video-card">
+                                    <span class="play-icon">▶</span>
+                                    <span class="video-title">Kako se igra Catan — pravila</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="video-card">
+                                    <span class="play-icon">▶</span>
+                                    <span class="video-title">Promo: nove igre u ponudi</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="video-card">
+                                    <span class="play-icon">▶</span>
+                                    <span class="video-title">Radionica za početnike</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- BANNERS -->
+        <section class="banner-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Partneri i korisni linkovi</h2>
+                    <p>Zajednice, izdavači i turniri iz sveta društvenih igara.</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <a class="banner-link" href="https://boardgamegeek.com" target="_blank" rel="noopener">
+                            <span class="banner-icon">BGG</span>
+                            <h3>BoardGameGeek</h3>
+                            <p>Najveća svetska baza igara, ocena i zajednica igrača.</p>
+                            <span class="banner-cta">Poseti sajt →</span>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="banner-link" href="https://www.asmodee.com" target="_blank" rel="noopener">
+                            <span class="banner-icon">ASM</span>
+                            <h3>Asmodee</h3>
+                            <p>Jedan od vodećih svetskih izdavača društvenih igara.</p>
+                            <span class="banner-cta">Poseti sajt →</span>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="banner-link" href="https://boardgamearena.com" target="_blank" rel="noopener">
+                            <span class="banner-icon">BGA</span>
+                            <h3>Board Game Arena</h3>
+                            <p>Igraj društvene igre i turnire online sa igračima iz celog sveta.</p>
+                            <span class="banner-cta">Poseti sajt →</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <figure class="lightbox-figure" onclick="event.stopPropagation()">
+            <div id="lightbox-media"></div>
+            <figcaption id="lightbox-caption"></figcaption>
+        </figure>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>
+                Copyright 2026, Milica Tadić &amp; Ivana Mušikić, Odsek za softversko inženjerstvo
+                Elektrotehničkog fakulteta Univerziteta u Beogradu
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Lightbox logic (gallery-specific) -->
+    <script src="js/gallery.js"></script>
+</body>
+</html>
