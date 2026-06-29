@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardGame Online Shop | O nama</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="images/logo.png" alt="BoardGame Online Shop logo" class="logo">
+                    <span class="brand-text">BoardGame Online Shop</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Početna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galerija.html">Galerija</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="katalog.html" role="button" data-bs-toggle="dropdown">
+                                Katalog igara
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="katalog.html">Sve igre</a></li>
+                                <li><a class="dropdown-item" href="katalog.html?kategorija=porodicne">Porodične igre</a></li>
+                                <li><a class="dropdown-item" href="katalog.html?kategorija=strateske">Strateške igre</a></li>
+                                <li><a class="dropdown-item" href="katalog.html?kategorija=zabavne">Zabavne igre</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nalog.html">Moj nalog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="onama.html">O nama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link lang-link" href="en/about.html">EN</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BREADCRUMBS -->
+    <div class="breadcrumb-bar">
+        <div class="container">
+            <ul class="breadcrumb-custom">
+                <li><a href="index.html">Početna</a></li>
+                <li class="sep">›</li>
+                <li class="active">O nama</li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <!-- PAGE TITLE -->
+        <section class="page-header">
+            <div class="container">
+                <h1>O nama</h1>
+                <p>Mesto okupljanja ljubitelja društvenih igara u Beogradu.</p>
+            </div>
+        </section>
+
+        <!-- HISTORY + MISSION -->
+        <section class="content-section">
+            <div class="container">
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-lg-6">
+                        <div class="info-card h-100">
+                            <h3>Naša priča</h3>
+                            <p>
+                                BoardGame Online Shop nastao je 2018. godine iz male grupe prijatelja
+                                koji su svaki petak rezervisali za veče društvenih igara. Ono što je počelo
+                                kao polica sa nekoliko kutija, vremenom je preraslo u prodavnicu sa preko
+                                300 naslova i redovne turnirske večeri. Danas opslužujemo igrače širom
+                                Srbije i organizujemo promocije i radionice za sve uzraste.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="info-card h-100">
+                            <h3>Naša misija</h3>
+                            <p>
+                                Verujemo da najbolji trenuci nastaju oko stola, bez ekrana. Naša misija je
+                                da svakom društvu pomognemo da pronađe pravu igru — bilo da je u pitanju
+                                opuštena porodična zabava, napeta strateška bitka ili brza partija uz smeh.
+                                Trudimo se da savetom, ne samo prodajom, učinimo svet društvenih igara
+                                pristupačnim svakome.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AWARDS -->
+        <section class="content-section light-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nagrade i priznanja</h2>
+                    <p>Ponosni smo na priznanja koja smo osvojili tokom godina.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="info-card">
+                            <ul class="award-list">
+                                <li>Najbolja specijalizovana prodavnica igara — izbor zajednice 2021.</li>
+                                <li>Organizator godine na regionalnom festivalu društvenih igara 2022.</li>
+                                <li>Priznanje za doprinos popularizaciji društvenih igara među mladima 2023.</li>
+                                <li>Partner sertifikovan od strane vodećih izdavača igara 2024.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OPENING HOURS + CONTACT -->
+        <section class="content-section">
+            <div class="container">
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-lg-6">
+                        <div class="info-card h-100">
+                            <h3>Radno vreme</h3>
+                            <ul class="contact-list">
+                                <li><strong>Ponedeljak – petak:</strong> 10:00 – 20:00</li>
+                                <li><strong>Subota:</strong> 10:00 – 18:00</li>
+                                <li><strong>Nedelja:</strong> 12:00 – 16:00 (samo igraonica)</li>
+                                <li><strong>Državni praznici:</strong> zatvoreno</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="info-card h-100">
+                            <h3>Kontakt i adresa</h3>
+                            <ul class="contact-list">
+                                <li><strong>Adresa:</strong> Bulevar kralja Aleksandra 73, 11000 Beograd</li>
+                                <li><strong>Telefon:</strong> +381 11 123 4567</li>
+                                <li><strong>E-pošta:</strong> info@boardgameshop.rs</li>
+                                <li><strong>Instagram:</strong> @boardgameshop.rs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAP -->
+        <section class="content-section light-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Gde se nalazimo</h2>
+                    <p>Posetite nas u centru Beograda.</p>
+                </div>
+                <div class="map-wrap">
+                    <iframe
+                        title="Lokacija prodavnice na mapi"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=20.4721%2C44.8018%2C20.4841%2C44.8078&amp;layer=mapnik&amp;marker=44.8048%2C20.4781"
+                        loading="lazy"></iframe>
+                </div>
+                <p class="text-center mt-3">
+                    <a href="https://www.openstreetmap.org/?mlat=44.8048&amp;mlon=20.4781#map=16/44.8048/20.4781"
+                       target="_blank" rel="noopener" class="btn btn-outline-custom">Prikaži veću mapu</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- BANNERS -->
+        <section class="banner-section">
+            <div class="container">
+                <div class="banner-box">
+                    <h2>Partneri i korisni linkovi</h2>
+                    <p>Uskoro: linkovi ka turnirima, izdavačima i zajednicama društvenih igara.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>
+                Copyright 2026, Milica Tadić &amp; Ivana Mušikić, Odsek za softversko inženjerstvo
+                Elektrotehničkog fakulteta Univerziteta u Beogradu
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,147 +1,131 @@
-const games = [
-    {
-        id: "catan",
-        name: "Catan",
-        category: "strateske",
-        categoryName: "Strateške igre",
-        price: 4500,
-        players: "3-4",
-        age: "10+",
-        duration: "60-120 min",
-        rating: 4.8,
-        image: "images/games/catan.jpg",
-        description: "Catan je strateška društvena igra u kojoj igrači grade naselja, puteve i gradove, trguju resursima i pokušavaju da osvoje ostrvo."
-    },
-    {
-        id: "ticket-to-ride",
-        name: "Ticket to Ride",
-        category: "porodicne",
-        categoryName: "Porodične igre",
-        price: 5200,
-        players: "2-5",
-        age: "8+",
-        duration: "30-60 min",
-        rating: 4.9,
-        image: "images/games/ticket-to-ride.jpg",
-        description: "Ticket to Ride je porodična igra u kojoj igrači grade železničke rute između gradova i sakupljaju poene."
-    },
-    {
-        id: "dixit",
-        name: "Dixit",
-        category: "porodicne",
-        categoryName: "Porodične igre",
-        price: 3900,
-        players: "3-6",
-        age: "8+",
-        duration: "30 min",
-        rating: 4.7,
-        image: "images/games/dixit.jpg",
-        description: "Dixit je kreativna igra asocijacija, mašte i prelepih ilustracija, idealna za opušteno društvo."
-    },
-    {
-        id: "uno",
-        name: "Uno",
-        category: "zabavne",
-        categoryName: "Zabavne igre",
-        price: 1200,
-        players: "2-10",
-        age: "7+",
-        duration: "15-30 min",
-        rating: 4.4,
-        image: "images/games/uno.jpg",
-        description: "Uno je brza i zabavna kartaška igra u kojoj igrači pokušavaju da se prvi oslobode svih karata."
-    },
-    {
-        id: "azul",
-        name: "Azul",
-        category: "strateske",
-        categoryName: "Strateške igre",
-        price: 4300,
-        players: "2-4",
-        age: "8+",
-        duration: "30-45 min",
-        rating: 4.8,
-        image: "images/games/azul.jpg",
-        description: "Azul je apstraktna strateška igra u kojoj igrači biraju i postavljaju pločice kako bi osvojili što više poena."
-    },
-    {
-        id: "exploding-kittens",
-        name: "Exploding Kittens",
-        category: "zabavne",
-        categoryName: "Zabavne igre",
-        price: 2500,
-        players: "2-5",
-        age: "7+",
-        duration: "15 min",
-        rating: 4.5,
-        image: "images/games/exploding-kittens.jpg",
-        description: "Exploding Kittens je brza, nepredvidiva i smešna kartaška igra puna iznenađenja."
-    },
-    {
-        id: "monopoly",
-        name: "Monopoly",
-        category: "porodicne",
-        categoryName: "Porodične igre",
-        price: 3600,
-        players: "2-6",
-        age: "8+",
-        duration: "60-180 min",
-        rating: 4.2,
-        image: "images/games/monopoly.jpg",
-        description: "Monopoly je klasična porodična igra kupovine, prodaje i upravljanja nekretninama."
-    },
-    {
-        id: "risk",
-        name: "Risk",
-        category: "strateske",
-        categoryName: "Strateške igre",
-        price: 4800,
-        players: "2-6",
-        age: "10+",
-        duration: "120 min",
-        rating: 4.3,
-        image: "images/games/risk.jpg",
-        description: "Risk je strateška igra osvajanja teritorija, planiranja napada i kontrole mape."
-    },
-    {
-        id: "dobble",
-        name: "Dobble",
-        category: "zabavne",
-        categoryName: "Zabavne igre",
-        price: 1800,
-        players: "2-8",
-        age: "6+",
-        duration: "10-15 min",
-        rating: 4.6,
-        image: "images/games/dobble.jpg",
-        description: "Dobble je brza igra zapažanja i refleksa u kojoj igrači traže zajedničke simbole na kartama."
-    }
+/* ============================================================
+   data.js — central list of games
+   Used by cart.js (addToCart looks up the name/price by id),
+   and later by catalog.js / game.js to render the games.
+   Categories: porodicne | strateske | zabavne
+   ============================================================ */
+
+const GAMES = [
+  // ---- FAMILY ----
+  {
+    id: "ticket-to-ride",
+    naziv: "Ticket to Ride",
+    kategorija: "porodicne",
+    cena: 5200,
+    opis: "Gradi železničke rute kroz mapu i poveži gradove pre protivnika.",
+    brojIgraca: "2–5",
+    uzrast: "8+",
+    trajanje: "30–60 min",
+    ocena: 4.8,
+    slike: ["images/igre/ticket-to-ride.jpg"]
+  },
+  {
+    id: "carcassonne",
+    naziv: "Carcassonne",
+    kategorija: "porodicne",
+    cena: 3600,
+    opis: "Slaži pločice i osvajaj puteve, gradove i manastire svojim sledbenicima.",
+    brojIgraca: "2–5",
+    uzrast: "7+",
+    trajanje: "30–45 min",
+    ocena: 4.6,
+    slike: ["images/igre/carcassonne.jpg"]
+  },
+  {
+    id: "dixit",
+    naziv: "Dixit",
+    kategorija: "porodicne",
+    cena: 3900,
+    opis: "Kreativna igra asocijacija, mašte i prelepih ilustracija.",
+    brojIgraca: "3–6",
+    uzrast: "8+",
+    trajanje: "30 min",
+    ocena: 4.7,
+    slike: ["images/igre/dixit.jpg"]
+  },
+
+  // ---- STRATEGY ----
+  {
+    id: "catan",
+    naziv: "Catan",
+    kategorija: "strateske",
+    cena: 4500,
+    opis: "Strateška igra trgovine, gradnje i osvajanja teritorije.",
+    brojIgraca: "3–4",
+    uzrast: "10+",
+    trajanje: "60–90 min",
+    ocena: 4.7,
+    slike: ["images/igre/catan.jpg"]
+  },
+  {
+    id: "azul",
+    naziv: "Azul",
+    kategorija: "strateske",
+    cena: 4100,
+    opis: "Prelepa apstraktna igra slaganja pločica i bodovanja uzoraka.",
+    brojIgraca: "2–4",
+    uzrast: "8+",
+    trajanje: "30–45 min",
+    ocena: 4.8,
+    slike: ["images/igre/azul.jpg"]
+  },
+  {
+    id: "terraforming-mars",
+    naziv: "Terraforming Mars",
+    kategorija: "strateske",
+    cena: 7900,
+    opis: "Vodi korporaciju koja menja Mars u nastanjivu planetu.",
+    brojIgraca: "1–5",
+    uzrast: "12+",
+    trajanje: "90–120 min",
+    ocena: 4.9,
+    slike: ["images/igre/terraforming-mars.jpg"]
+  },
+
+  // ---- PARTY ----
+  {
+    id: "uno",
+    naziv: "Uno",
+    kategorija: "zabavne",
+    cena: 1200,
+    opis: "Brza i zabavna kartaška igra za celu ekipu.",
+    brojIgraca: "2–10",
+    uzrast: "7+",
+    trajanje: "15–30 min",
+    ocena: 4.4,
+    slike: ["images/igre/uno.jpg"]
+  },
+  {
+    id: "exploding-kittens",
+    naziv: "Exploding Kittens",
+    kategorija: "zabavne",
+    cena: 2300,
+    opis: "Brza i smešna igra za opušteno društvo.",
+    brojIgraca: "2–5",
+    uzrast: "7+",
+    trajanje: "15 min",
+    ocena: 4.3,
+    slike: ["images/igre/exploding-kittens.jpg"]
+  },
+  {
+    id: "codenames",
+    naziv: "Codenames",
+    kategorija: "zabavne",
+    cena: 2900,
+    opis: "Timska igra pogađanja reči pomoću jednog asocijativnog traga.",
+    brojIgraca: "2–8",
+    uzrast: "10+",
+    trajanje: "15–30 min",
+    ocena: 4.7,
+    slike: ["images/igre/codenames.jpg"]
+  }
 ];
 
+// available globally (no modules, plain <script>)
+window.GAMES = GAMES;
+
+// helper: find a game by id
 function getGameById(id) {
-    return games.find(function(game) {
-        return game.id === id;
-    });
+  return GAMES.find(g => g.id === id) || null;
 }
-
-function getGamesByCategory(category) {
-    if (category === "sve" || !category) {
-        return games;
-    }
-
-    return games.filter(function(game) {
-        return game.category === category;
-    });
-}
-
-function getTopRatedGames(limit) {
-    return [...games]
-        .sort(function(a, b) {
-            return b.rating - a.rating;
-        })
-        .slice(0, limit);
-}
-
-function formatPrice(price) {
-    return price.toLocaleString("sr-RS") + " RSD";
-}
+window.getGameById = getGameById;
