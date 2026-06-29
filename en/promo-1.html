@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardGame Online Shop | Family weekend</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/milica.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="../images/logo.png" alt="BoardGame Online Shop logo" class="logo">
+                    <span class="brand-text">BoardGame Online Shop</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="catalog.html" role="button" data-bs-toggle="dropdown">Game catalog</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="catalog.html">All games</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?kategorija=porodicne">Family games</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?kategorija=strateske">Strategy games</a></li>
+                                <li><a class="dropdown-item" href="catalog.html?kategorija=zabavne">Party games</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="account.html">My account</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link lang-link" href="../akcija-1.html">SR</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <span class="badge-custom">-20%</span>
+                <h1>Family weekend</h1>
+                <p>20% off all family games, every weekend.</p>
+                <nav class="breadcrumbs">
+                    <a href="index.html">Home</a>
+                    <span>›</span>
+                    <a href="index.html#akcije">Promotions</a>
+                    <span>›</span>
+                    <span>Family weekend</span>
+                </nav>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-lg-7">
+                        <div class="info-card h-100">
+                            <h3>Offer details</h3>
+                            <ul class="contact-list">
+                                <li><strong>What you get:</strong> 20% off every game in the family category</li>
+                                <li><strong>When:</strong> every Saturday and Sunday, all season long</li>
+                                <li><strong>How it works:</strong> the discount is applied automatically in the cart for family games</li>
+                                <li><strong>Example games:</strong> Ticket to Ride, Carcassonne, Dixit</li>
+                            </ul>
+                            <a href="catalog.html?kategorija=porodicne" class="btn btn-primary-custom mt-3">Browse family games</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="promo-media">
+                            <img src="../images/akcije/akcija-1.jpg" alt="Family weekend"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="promo-ph" style="display:none">Family weekend</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>
+                Copyright 2026, Milica Tadić &amp; Ivana Mušikić, Odsek za softversko inženjerstvo
+                Elektrotehničkog fakulteta Univerziteta u Beogradu
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
