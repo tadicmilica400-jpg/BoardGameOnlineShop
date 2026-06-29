@@ -1,0 +1,260 @@
+/* Breadcrumbs */
+
+.breadcrumb-bar {
+    background-color: #fff7fb;
+    padding: 16px 0;
+    border-bottom: 1px solid #f2d3ee;
+}
+
+.breadcrumb-custom {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-custom li {
+    margin: 0;
+    padding: 0;
+    color: #5d3b6f;
+    font-weight: 600;
+}
+
+.breadcrumb-custom a {
+    color: #e754a6;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.breadcrumb-custom a:hover {
+    color: #7b3fa3;
+}
+
+.breadcrumb-custom .sep {
+    color: #b780d6;
+}
+
+.breadcrumb-custom .active {
+    color: #3b2b45;
+}
+
+/* Game details page */
+
+.game-detail-image-box {
+    background-color: white;
+    border-radius: 24px;
+    padding: 20px;
+    border: 1px solid #f2d3ee;
+    box-shadow: 0 8px 20px rgba(123, 63, 163, 0.10);
+}
+
+.game-detail-image-placeholder {
+    min-height: 360px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #f9c5e7, #d9b8ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7b3fa3;
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+    overflow: hidden;
+}
+
+.game-detail-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+.game-detail-card {
+    background-color: white;
+    border-radius: 24px;
+    padding: 32px;
+    border: 1px solid #f2d3ee;
+    box-shadow: 0 8px 20px rgba(123, 63, 163, 0.10);
+}
+
+.game-detail-card h2 {
+    color: #6d348e;
+    font-weight: 800;
+    margin: 14px 0;
+}
+
+.game-detail-description {
+    color: #6a5b72;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.game-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.game-detail-info {
+    background-color: #fff7fb;
+    border: 1px solid #f2d3ee;
+    border-radius: 18px;
+    padding: 16px;
+}
+
+.game-detail-info span {
+    display: block;
+    color: #8b6b99;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.game-detail-info strong {
+    color: #6d348e;
+    font-size: 18px;
+}
+
+.game-detail-price {
+    font-size: 26px;
+    margin-bottom: 24px;
+}
+
+.game-detail-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Rating */
+
+.rating-box {
+    background-color: white;
+    border-radius: 24px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #f2d3ee;
+    box-shadow: 0 8px 20px rgba(123, 63, 163, 0.10);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rating-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.rating-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #d49be8;
+    background-color: #fff7fb;
+    color: #7b3fa3;
+    font-weight: 800;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.rating-btn:hover,
+.rating-btn.active {
+    background-color: #e754a6;
+    color: white;
+    border-color: #e754a6;
+}
+
+.rating-message {
+    margin: 0;
+    color: #6a5b72;
+    font-weight: 700;
+}
+
+/* Comments */
+
+.comments-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.comment-form-box,
+.comments-list-box {
+    background-color: white;
+    border-radius: 24px;
+    padding: 28px;
+    border: 1px solid #f2d3ee;
+    box-shadow: 0 8px 20px rgba(123, 63, 163, 0.10);
+}
+
+.comment-form-box h3,
+.comments-list-box h3 {
+    color: #6d348e;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.comment-form-box .form-label {
+    color: #6d348e;
+    font-weight: 700;
+}
+
+.comment-form-box .form-control {
+    border-radius: 16px;
+    border: 1px solid #e5c3ec;
+    padding: 11px 14px;
+}
+
+.comment-form-box .form-control:focus {
+    border-color: #e754a6;
+    box-shadow: 0 0 0 0.2rem rgba(231, 84, 166, 0.15);
+}
+
+.comment-card {
+    background-color: #fff7fb;
+    border: 1px solid #f2d3ee;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 14px;
+}
+
+.comment-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.comment-top strong {
+    color: #6d348e;
+}
+
+.comment-top span {
+    color: #8b6b99;
+    font-size: 14px;
+}
+
+.comment-card p {
+    color: #6a5b72;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .game-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comments-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .game-detail-image-placeholder {
+        min-height: 260px;
+    }
+}
