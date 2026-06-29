@@ -258,3 +258,11 @@
         min-height: 260px;
     }
 }
+/* Catalog game images */
+
+.game-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}

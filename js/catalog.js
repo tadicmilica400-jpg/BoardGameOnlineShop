@@ -48,7 +48,11 @@ function renderGames(gamesToRender) {
         gameCard.innerHTML = `
             <div class="game-card">
                 <div class="game-image-placeholder">
-                    ${game.naziv}
+                    ${
+                        game.slike && game.slike.length > 0
+                            ? `<img src="${game.slike[0]}" alt="${game.naziv}">`
+                            : game.naziv
+                    }
                 </div>
 
                 <div class="game-card-body">
