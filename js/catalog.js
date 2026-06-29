@@ -20,6 +20,20 @@ function getCategoryName(category) {
     return "Društvena igra";
 }
 
+function removeSerbianChars(text) {
+    return text
+        .replaceAll("č", "c")
+        .replaceAll("ć", "c")
+        .replaceAll("đ", "dj")
+        .replaceAll("š", "s")
+        .replaceAll("ž", "z")
+        .replaceAll("Č", "C")
+        .replaceAll("Ć", "C")
+        .replaceAll("Đ", "Dj")
+        .replaceAll("Š", "S")
+        .replaceAll("Ž", "Z");
+}
+
 function readCategoryFromUrl() {
     const params = new URLSearchParams(window.location.search);
     const category = params.get("kategorija");
@@ -134,14 +148,69 @@ function addCatalogItemToCart(gameId) {
     }
 }
 
-function downloadCatalogPlaceholder() {
-    alert("PDF katalog ćemo dodati kasnije.");
+function downloadCatalogPdf() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    let y = 20;
+
+    doc.setFontSize(18);
+    doc.text("BoardGame Online Shop - Katalog igara", 15, y);
+
+    y += 12;
+
+    doc.setFontSize(11);
+    doc.text("Prikazane igre: " + currentGames.length, 15, y);
+
+    y += 12;
+
+    currentGames.forEach(function(game, index) {
+        if (y > 270) {
+            doc.addPage();
+            y = 20;
+        }
+
+        doc.setFontSize(13);
+        doc.text(removeSerbianChars((index + 1) + ". " + game.naziv), 15, y);
+
+        y += 7;
+
+        doc.setFontSize(10);
+        doc.text(removeSerbianChars("Kategorija: " + getCategoryName(game.kategorija)), 20, y);
+        y += 6;
+
+        doc.text(removeSerbianChars("Cena: " + formatRSD(game.cena)), 20, y);
+        y += 6;
+
+        doc.text(removeSerbianChars("Broj igraca: " + game.brojIgraca), 20, y);
+        y += 6;
+
+        doc.text(removeSerbianChars("Uzrast: " + game.uzrast), 20, y);
+        y += 6;
+
+        doc.text(removeSerbianChars("Trajanje: " + game.trajanje), 20, y);
+        y += 6;
+
+        doc.text(removeSerbianChars("Ocena: " + game.ocena + "/5"), 20, y);
+        y += 6;
+
+        const splitDescription = doc.splitTextToSize(
+            removeSerbianChars("Opis: " + game.opis),
+            170
+        );
+
+        doc.text(splitDescription, 20, y);
+
+        y += splitDescription.length * 6 + 8;
+    });
+
+    doc.save("katalog-igara.pdf");
 }
 
 searchInput.addEventListener("input", applyFiltersAndSort);
 categoryFilter.addEventListener("change", applyFiltersAndSort);
 sortSelect.addEventListener("change", applyFiltersAndSort);
-downloadPdfBtn.addEventListener("click", downloadCatalogPlaceholder);
+downloadPdfBtn.addEventListener("click", downloadCatalogPdf);
 
 readCategoryFromUrl();
 applyFiltersAndSort();
