@@ -360,9 +360,19 @@
 }
 
 .lightbox-figure {
-    max-width: 800px;
-    width: 100%;
+    max-width: 95vw;
+    max-height: 90vh;
     margin: 0;
+    text-align: center;
+}
+
+.lightbox-figure img {
+    max-width: 95vw;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
 }
 
 .lightbox-figure img,
@@ -454,3 +464,37 @@
     font-weight: 800;
     margin-top: 14px;
 }
+
+.video-card-real {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(123, 63, 163, 0.12);
+    background-color: #fff;
+    padding: 12px;
+}
+
+.video-card-real video {
+    width: 100%;
+    border-radius: 16px;
+    display: block;
+}
+
+.video-card-real p {
+    margin: 10px 0 0;
+    color: #6d348e;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+
+/* video tiles clickable (open in lightbox like images) */
+.video-card { width: 100%; cursor: pointer; font-family: inherit; transition: 0.2s; }
+.video-card:hover { transform: translateY(-5px); }
+
+/* video inside the lightbox */
+.lightbox-video { max-width: 95vw; max-height: 75vh; width: auto; height: auto; border-radius: 16px; background: #000; }
+
+/* static (offline) map image + fallback */
+.map-wrap img { display: block; width: 100%; height: 380px; object-fit: cover; }
+.map-ph { min-height: 300px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; background: linear-gradient(135deg, #f9c5e7, #d9b8ff); color: #7b3fa3; font-weight: 700; font-size: 18px; line-height: 1.5; }

@@ -79,154 +79,111 @@
         <section class="content-section">
             <div class="container">
 
-                <!-- Tabs: shop / games / video -->
                 <ul class="nav gallery-tabs justify-content-center mb-5" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="gallery-tab active" data-bs-toggle="tab" data-bs-target="#tab-prodavnica" type="button" role="tab">
-                            Prodavnica
-                        </button>
+                        <button class="gallery-tab active" data-bs-toggle="tab" data-bs-target="#tab-prodavnica" type="button" role="tab">Prodavnica</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="gallery-tab" data-bs-toggle="tab" data-bs-target="#tab-igre" type="button" role="tab">
-                            Društvene igre
-                        </button>
+                        <button class="gallery-tab" data-bs-toggle="tab" data-bs-target="#tab-igre" type="button" role="tab">Igre</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="gallery-tab" data-bs-toggle="tab" data-bs-target="#tab-video" type="button" role="tab">
-                            Video
-                        </button>
+                        <button class="gallery-tab" data-bs-toggle="tab" data-bs-target="#tab-video" type="button" role="tab">Video</button>
                     </li>
                 </ul>
 
                 <div class="tab-content">
 
-                    <!-- == SHOP PHOTOS == -->
-                    <!-- To add a real photo: keep the same <button>, the <img> shows it,
-                         the .gallery-ph behind it is just the fallback if the file is missing. -->
                     <div class="tab-pane fade show active" id="tab-prodavnica" role="tabpanel">
                         <div class="row g-4">
                             <div class="col-6 col-md-4">
-                                <button class="gallery-item" type="button"
-                                        onclick="openLightbox(this)"
-                                        data-full="images/galerija/prodavnica-1.jpg"
-                                        data-caption="Enterijer prodavnice">
-                                    <img src="images/galerija/prodavnica-1.jpg" alt="Enterijer prodavnice" onerror="this.remove()">
+                                <button class="gallery-item" type="button" onclick="openLightbox(this)"
+                                        data-full="images/galerija/prodavnica-1.jpg" data-caption="Police sa igrama">
+                                    <img src="images/galerija/prodavnica-1.jpg" alt="Police sa igrama" onerror="this.remove()">
+                                    <span class="gallery-ph">Police sa igrama</span>
+                                    <span class="gallery-cap">Police sa igrama</span>
+                                </button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button" onclick="openLightbox(this)"
+                                        data-full="images/galerija/prodavnica-2.jpg" data-caption="Police društvenih igara">
+                                    <img src="images/galerija/prodavnica-2.jpg" alt="Police društvenih igara" onerror="this.remove()">
+                                    <span class="gallery-ph">Police društvenih igara</span>
+                                    <span class="gallery-cap">Police društvenih igara</span>
+                                </button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button" onclick="openLightbox(this)"
+                                        data-full="images/galerija/prodavnica-3.jpg" data-caption="Kasa">
+                                    <img src="images/galerija/prodavnica-3.jpg" alt="Kasa" onerror="this.remove()">
+                                    <span class="gallery-ph">Kasa</span>
+                                    <span class="gallery-cap">Kasa</span>
+                                </button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <button class="gallery-item" type="button" onclick="openLightbox(this)"
+                                        data-full="images/galerija/prodavnica-4.jpg" data-caption="Enterijer prodavnice">
+                                    <img src="images/galerija/prodavnica-4.jpg" alt="Enterijer prodavnice" onerror="this.remove()">
                                     <span class="gallery-ph">Enterijer prodavnice</span>
                                     <span class="gallery-cap">Enterijer prodavnice</span>
                                 </button>
                             </div>
                             <div class="col-6 col-md-4">
-                                <button class="gallery-item" type="button"
-                                        onclick="openLightbox(this)"
-                                        data-full="images/galerija/prodavnica-2.jpg"
-                                        data-caption="Polica sa igrama">
-                                    <img src="images/galerija/prodavnica-2.jpg" alt="Polica sa igrama" onerror="this.remove()">
-                                    <span class="gallery-ph">Polica sa igrama</span>
-                                    <span class="gallery-cap">Polica sa igrama</span>
-                                </button>
-                            </div>
-                            <div class="col-6 col-md-4">
-                                <button class="gallery-item" type="button"
-                                        onclick="openLightbox(this)"
-                                        data-full="images/galerija/prodavnica-3.jpg"
-                                        data-caption="Kutak za igranje">
-                                    <img src="images/galerija/prodavnica-3.jpg" alt="Kutak za igranje" onerror="this.remove()">
-                                    <span class="gallery-ph">Kutak za igranje</span>
-                                    <span class="gallery-cap">Kutak za igranje</span>
-                                </button>
-                            </div>
-                            <div class="col-6 col-md-4">
-                                <button class="gallery-item" type="button"
-                                        onclick="openLightbox(this)"
-                                        data-full="images/galerija/prodavnica-4.jpg"
-                                        data-caption="Izlog prodavnice">
-                                    <img src="images/galerija/prodavnica-4.jpg" alt="Izlog prodavnice" onerror="this.remove()">
-                                    <span class="gallery-ph">Izlog prodavnice</span>
-                                    <span class="gallery-cap">Izlog prodavnice</span>
-                                </button>
-                            </div>
-                            <div class="col-6 col-md-4">
-                                <button class="gallery-item" type="button"
-                                        onclick="openLightbox(this)"
-                                        data-full="images/galerija/prodavnica-5.jpg"
-                                        data-caption="Pult i kasa">
-                                    <img src="images/galerija/prodavnica-5.jpg" alt="Pult i kasa" onerror="this.remove()">
-                                    <span class="gallery-ph">Pult i kasa</span>
-                                    <span class="gallery-cap">Pult i kasa</span>
-                                </button>
-                            </div>
-                            <div class="col-6 col-md-4">
-                                <button class="gallery-item" type="button"
-                                        onclick="openLightbox(this)"
-                                        data-full="images/galerija/prodavnica-6.jpg"
-                                        data-caption="Sala za radionice">
-                                    <img src="images/galerija/prodavnica-6.jpg" alt="Sala za radionice" onerror="this.remove()">
-                                    <span class="gallery-ph">Sala za radionice</span>
-                                    <span class="gallery-cap">Sala za radionice</span>
+                                <button class="gallery-item" type="button" onclick="openLightbox(this)"
+                                        data-full="images/galerija/prodavnica-5.jpg" data-caption="Unutrašnjost prodavnice">
+                                    <img src="images/galerija/prodavnica-5.jpg" alt="Unutrašnjost prodavnice" onerror="this.remove()">
+                                    <span class="gallery-ph">Unutrašnjost prodavnice</span>
+                                    <span class="gallery-cap">Unutrašnjost prodavnice</span>
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- == BOARD GAME PHOTOS == -->
                     <div class="tab-pane fade" id="tab-igre" role="tabpanel">
                         <div class="row g-4">
                             <div class="col-6 col-md-4">
-                                <button class="gallery-item" type="button"
-                                        onclick="openLightbox(this)"
-                                        data-full="images/galerija/igra-catan.jpg"
-                                        data-caption="Catan">
-                                    <img src="images/galerija/igra-catan.jpg" alt="Catan" onerror="this.remove()">
+                                <button class="gallery-item" type="button" onclick="openLightbox(this)"
+                                        data-full="images/galerija/igra-catan.jpeg" data-caption="Catan">
+                                    <img src="images/galerija/igra-catan.jpeg" alt="Catan" onerror="this.remove()">
                                     <span class="gallery-ph">Catan</span>
                                     <span class="gallery-cap">Catan</span>
                                 </button>
                             </div>
                             <div class="col-6 col-md-4">
-                                <button class="gallery-item" type="button"
-                                        onclick="openLightbox(this)"
-                                        data-full="images/galerija/igra-azul.jpg"
-                                        data-caption="Azul">
-                                    <img src="images/galerija/igra-azul.jpg" alt="Azul" onerror="this.remove()">
+                                <button class="gallery-item" type="button" onclick="openLightbox(this)"
+                                        data-full="images/galerija/igra-azul.jpeg" data-caption="Azul">
+                                    <img src="images/galerija/igra-azul.jpeg" alt="Azul" onerror="this.remove()">
                                     <span class="gallery-ph">Azul</span>
                                     <span class="gallery-cap">Azul</span>
                                 </button>
                             </div>
                             <div class="col-6 col-md-4">
-                                <button class="gallery-item" type="button"
-                                        onclick="openLightbox(this)"
-                                        data-full="images/galerija/igra-ticket.jpg"
-                                        data-caption="Ticket to Ride">
-                                    <img src="images/galerija/igra-ticket.jpg" alt="Ticket to Ride" onerror="this.remove()">
+                                <button class="gallery-item" type="button" onclick="openLightbox(this)"
+                                        data-full="images/galerija/igra-ticket.jpeg" data-caption="Ticket to Ride">
+                                    <img src="images/galerija/igra-ticket.jpeg" alt="Ticket to Ride" onerror="this.remove()">
                                     <span class="gallery-ph">Ticket to Ride</span>
                                     <span class="gallery-cap">Ticket to Ride</span>
                                 </button>
                             </div>
                             <div class="col-6 col-md-4">
-                                <button class="gallery-item" type="button"
-                                        onclick="openLightbox(this)"
-                                        data-full="images/galerija/igra-dixit.jpg"
-                                        data-caption="Dixit">
-                                    <img src="images/galerija/igra-dixit.jpg" alt="Dixit" onerror="this.remove()">
+                                <button class="gallery-item" type="button" onclick="openLightbox(this)"
+                                        data-full="images/galerija/igra-dixit.jpeg" data-caption="Dixit">
+                                    <img src="images/galerija/igra-dixit.jpeg" alt="Dixit" onerror="this.remove()">
                                     <span class="gallery-ph">Dixit</span>
                                     <span class="gallery-cap">Dixit</span>
                                 </button>
                             </div>
                             <div class="col-6 col-md-4">
-                                <button class="gallery-item" type="button"
-                                        onclick="openLightbox(this)"
-                                        data-full="images/galerija/igra-codenames.jpg"
-                                        data-caption="Codenames">
-                                    <img src="images/galerija/igra-codenames.jpg" alt="Codenames" onerror="this.remove()">
+                                <button class="gallery-item" type="button" onclick="openLightbox(this)"
+                                        data-full="images/galerija/igra-codenames.jpeg" data-caption="Codenames">
+                                    <img src="images/galerija/igra-codenames.jpeg" alt="Codenames" onerror="this.remove()">
                                     <span class="gallery-ph">Codenames</span>
                                     <span class="gallery-cap">Codenames</span>
                                 </button>
                             </div>
                             <div class="col-6 col-md-4">
-                                <button class="gallery-item" type="button"
-                                        onclick="openLightbox(this)"
-                                        data-full="images/galerija/igra-uno.jpg"
-                                        data-caption="Uno">
-                                    <img src="images/galerija/igra-uno.jpg" alt="Uno" onerror="this.remove()">
+                                <button class="gallery-item" type="button" onclick="openLightbox(this)"
+                                        data-full="images/galerija/igra-uno.jpeg" data-caption="Uno">
+                                    <img src="images/galerija/igra-uno.jpeg" alt="Uno" onerror="this.remove()">
                                     <span class="gallery-ph">Uno</span>
                                     <span class="gallery-cap">Uno</span>
                                 </button>
@@ -234,40 +191,34 @@
                         </div>
                     </div>
 
-                    <!-- == VIDEO == -->
-                    <!-- To add a real video: replace the .video-card button with a Bootstrap ratio + iframe, e.g.:
-                         <div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/VIDEO_ID"
-                              title="..." allowfullscreen></iframe></div> -->
                     <div class="tab-pane fade" id="tab-video" role="tabpanel">
                         <div class="row g-4">
                             <div class="col-md-6">
-                                <div class="video-card">
+                                <button class="video-card" type="button" onclick="openVideo(this)"
+                                        data-video="videos/turnir-uno.mp4" data-caption="Turnir: Uno">
                                     <span class="play-icon">▶</span>
-                                    <span class="video-title">Finale prolećnog turnira</span>
-                                </div>
+                                    <span class="video-title">Turnir: Uno</span>
+                                </button>
                             </div>
                             <div class="col-md-6">
-                                <div class="video-card">
+                                <button class="video-card" type="button" onclick="openVideo(this)"
+                                        data-video="videos/catan-pravila.mp4" data-caption="Kako se igra Catan — pravila">
                                     <span class="play-icon">▶</span>
                                     <span class="video-title">Kako se igra Catan — pravila</span>
-                                </div>
+                                </button>
                             </div>
                             <div class="col-md-6">
-                                <div class="video-card">
+                                <button class="video-card" type="button" onclick="openVideo(this)"
+                                        data-video="videos/dixit-novo.mp4" data-caption="Dixit — novo u ponudi">
                                     <span class="play-icon">▶</span>
-                                    <span class="video-title">Promo: nove igre u ponudi</span>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="video-card">
-                                    <span class="play-icon">▶</span>
-                                    <span class="video-title">Radionica za početnike</span>
-                                </div>
+                                    <span class="video-title">Dixit — novo u ponudi</span>
+                                </button>
                             </div>
                         </div>
                     </div>
 
                 </div>
+
             </div>
         </section>
 

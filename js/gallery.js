@@ -18,6 +18,21 @@ function openLightbox(el) {
 
     document.getElementById("lightbox-caption").textContent = caption;
     document.getElementById("lightbox").classList.add("open");
+
+    
+}
+
+function openVideo(el) {
+    const src = el.dataset.video;
+    const caption = el.dataset.caption || "";
+    const media = document.getElementById("lightbox-media");
+
+    // local video file, plays in the same lightbox as the images
+    media.innerHTML =
+        '<video src="' + src + '" class="lightbox-video" controls autoplay></video>';
+
+    document.getElementById("lightbox-caption").textContent = caption;
+    document.getElementById("lightbox").classList.add("open");
 }
 
 function closeLightbox() {
